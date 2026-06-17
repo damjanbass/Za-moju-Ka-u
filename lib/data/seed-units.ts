@@ -215,7 +215,7 @@ export const wordOfTheDayPool: string[] = [
   "v-prijatelj", "v-zena", "v-covek", "v-dete", "v-molim",
 ];
 
-// ─── Units (skeleton for skill tree) ─────────────────────────────────────────
+// ─── Units ────────────────────────────────────────────────────────────────────
 
 export const units: Unit[] = [
   {
@@ -229,15 +229,44 @@ export const units: Unit[] = [
     lessons: [
       {
         id: "lesson-0-1", title: "Las letras serbias", description: "Los 30 caracteres del alfabeto latino serbio",
-        unitId: "unit-0", order: 1, exercises: [], vocabItems: [], xpReward: 10,
+        unitId: "unit-0", order: 1, xpReward: 10, vocabItems: [],
+        exercises: [
+          { id: "e-01-1", type: "pronunciation", targetSr: "A a / А а", tipEs: "Como la 'a' en 'casa'. ¡Ya la conoces!" },
+          { id: "e-01-2", type: "recognize", promptSr: "auto", correctAnswer: "coche", distractors: ["casa", "agua", "nombre"] },
+          { id: "e-01-3", type: "pronunciation", targetSr: "B b / Б б", tipEs: "Como la 'b' en 'barco'" },
+          { id: "e-01-4", type: "recognize", promptSr: "brat", correctAnswer: "hermano", distractors: ["madre", "amigo", "padre"] },
+          { id: "e-01-5", type: "pronunciation", targetSr: "V v / В в", tipEs: "Como la 'v' fricativa inglesa — siempre fricativa, nunca como 'b'" },
+          { id: "e-01-6", type: "recognize", promptSr: "voda", correctAnswer: "agua", distractors: ["leche", "vino", "fuego"] },
+          { id: "e-01-7", type: "match", pairs: [{ sr: "auto", es: "coche" }, { sr: "brat", es: "hermano" }, { sr: "voda", es: "agua" }, { sr: "majka", es: "madre" }] },
+        ],
       },
       {
         id: "lesson-0-2", title: "Sonidos nuevos: č, ć, š, ž", description: "Los sonidos que no existen en español",
-        unitId: "unit-0", order: 2, exercises: [], vocabItems: [], xpReward: 15,
+        unitId: "unit-0", order: 2, xpReward: 15, vocabItems: [],
+        exercises: [
+          { id: "e-02-1", type: "pronunciation", targetSr: "Č č / Ч ч", tipEs: "CH fuerte como en 'chocolate'. Ejemplo: čaj = té" },
+          { id: "e-02-2", type: "recognize", promptSr: "čaj", correctAnswer: "té", distractors: ["café", "agua", "leche"] },
+          { id: "e-02-3", type: "pronunciation", targetSr: "Š š / Ш ш", tipEs: "SH del inglés 'she'. Como decir 'shh' para silenciar a alguien" },
+          { id: "e-02-4", type: "recognize", promptSr: "šta", correctAnswer: "qué", distractors: ["quién", "dónde", "cuándo"] },
+          { id: "e-02-5", type: "pronunciation", targetSr: "Ž ž / Ж ж", tipEs: "Como la 'j' francesa en 'jour'. Ejemplo: žena = mujer" },
+          { id: "e-02-6", type: "recognize", promptSr: "žena", correctAnswer: "mujer / esposa", distractors: ["hombre", "niño", "amigo"] },
+          { id: "e-02-7", type: "pronunciation", targetSr: "Ć ć / Ћ ћ", tipEs: "CH suave y palatal. Más adentro en la boca que č. Ejemplo: ćao = chao" },
+          { id: "e-02-8", type: "recognize", promptSr: "ćao", correctAnswer: "chao (saludo)", distractors: ["hola", "adiós", "gracias"] },
+          { id: "e-02-9", type: "match", pairs: [{ sr: "čaj", es: "té" }, { sr: "šta", es: "qué" }, { sr: "žena", es: "mujer" }, { sr: "ćao", es: "chao" }] },
+        ],
       },
       {
         id: "lesson-0-3", title: "Latinica ↔ Ćirilica", description: "Lee y escribe en los dos alfabetos",
-        unitId: "unit-0", order: 3, exercises: [], vocabItems: [], xpReward: 15,
+        unitId: "unit-0", order: 3, xpReward: 15, vocabItems: [],
+        exercises: [
+          { id: "e-03-1", type: "recognize", promptSr: "Здраво", correctAnswer: "Hola", distractors: ["Adiós", "Gracias", "Por favor"], explanation: "Здраво = Zdravo. Cada letra cirílica tiene su equivalente latino." },
+          { id: "e-03-2", type: "recognize", promptSr: "Хвала", correctAnswer: "Gracias", distractors: ["Hola", "Por favor", "Adiós"], explanation: "Хвала = Hvala. Х=H, в=v, а=a, л=l, а=a" },
+          { id: "e-03-3", type: "recognize", promptSr: "Добро", correctAnswer: "Bien", distractors: ["Mal", "Mucho", "Poco"], explanation: "Добро = Dobro. Д=D, о=o, б=b, р=r, о=o" },
+          { id: "e-03-4", type: "recognize", promptSr: "Вода", correctAnswer: "agua", distractors: ["fuego", "tierra", "aire"] },
+          { id: "e-03-5", type: "recognize", promptSr: "Мајка", correctAnswer: "madre", distractors: ["padre", "hermano", "amigo"] },
+          { id: "e-03-6", type: "match", pairs: [{ sr: "Здраво", es: "Hola" }, { sr: "Хвала", es: "Gracias" }, { sr: "Добро", es: "Bien" }, { sr: "Вода", es: "agua" }] },
+          { id: "e-03-7", type: "pronunciation", targetSr: "Ц ц → ts", tipEs: "¡Trampa! La 'c' cirílica serbia suena 'ts' (como en 'pizza'). Цена = cena = precio" },
+        ],
       },
     ],
   },
@@ -252,18 +281,45 @@ export const units: Unit[] = [
     lessons: [
       {
         id: "lesson-1-1", title: "Hola y adiós", description: "Zdravo, Doviđenja y más saludos esenciales",
-        unitId: "unit-1", order: 1, exercises: [], xpReward: 10,
+        unitId: "unit-1", order: 1, xpReward: 10,
         vocabItems: vocabItems.filter(v => ["v-zdravo","v-dobar-dan","v-dovidjenja","v-da","v-ne"].includes(v.id)),
+        exercises: [
+          { id: "e-11-1", type: "recognize", promptSr: "Zdravo", correctAnswer: "Hola", distractors: ["Adiós", "Gracias", "Por favor"], vocabItemId: "v-zdravo" },
+          { id: "e-11-2", type: "recognize", promptSr: "Dobar dan", correctAnswer: "Buenos días / Buenas tardes", distractors: ["Buenas noches", "Hasta luego", "Por favor"], vocabItemId: "v-dobar-dan" },
+          { id: "e-11-3", type: "recognize", promptSr: "Da", correctAnswer: "Sí", distractors: ["No", "Quizás", "Nunca"], vocabItemId: "v-da" },
+          { id: "e-11-4", type: "recognize", promptSr: "Ne", correctAnswer: "No", distractors: ["Sí", "Tal vez", "Siempre"], vocabItemId: "v-ne" },
+          { id: "e-11-5", type: "recognize", promptSr: "Doviđenja", correctAnswer: "Adiós / Hasta luego", distractors: ["Hola", "Gracias", "Por favor"], vocabItemId: "v-dovidjenja" },
+          { id: "e-11-6", type: "match", pairs: [{ sr: "Zdravo", es: "Hola" }, { sr: "Da", es: "Sí" }, { sr: "Ne", es: "No" }, { sr: "Doviđenja", es: "Adiós" }] },
+          { id: "e-11-7", type: "reverse-translation", promptEs: "Hola", correctAnswerSr: "Zdravo", acceptedVariants: ["zdravo"] },
+          { id: "e-11-8", type: "reverse-translation", promptEs: "Sí", correctAnswerSr: "Da", acceptedVariants: ["da"] },
+        ],
       },
       {
         id: "lesson-1-2", title: "¿Cómo te llamas?", description: "Presentarte y preguntar el nombre",
-        unitId: "unit-1", order: 2, exercises: [], xpReward: 10,
+        unitId: "unit-1", order: 2, xpReward: 10,
         vocabItems: vocabItems.filter(v => ["v-kako-se-zoves","v-ja-se-zovem","v-drago-mi-je"].includes(v.id)),
+        exercises: [
+          { id: "e-12-1", type: "recognize", promptSr: "Kako se zoveš?", correctAnswer: "¿Cómo te llamas?", distractors: ["¿Cómo estás?", "¿Dónde vives?", "¿Cuántos años tienes?"], vocabItemId: "v-kako-se-zoves" },
+          { id: "e-12-2", type: "recognize", promptSr: "Ja se zovem", correctAnswer: "Me llamo / Yo me llamo", distractors: ["Soy estudiante", "Tengo nombre", "Vivo en Serbia"], vocabItemId: "v-ja-se-zovem" },
+          { id: "e-12-3", type: "recognize", promptSr: "Drago mi je", correctAnswer: "Mucho gusto / Encantado", distractors: ["Hasta luego", "Buenos días", "Lo siento"], vocabItemId: "v-drago-mi-je" },
+          { id: "e-12-4", type: "fill-gap", sentenceWithGap: "Ja ___ Marko.", correctAnswer: "se zovem", options: ["se zovem", "sam", "si", "je"], patternNote: "se zovem = me llamo (reflexivo de zvati = llamar)" },
+          { id: "e-12-5", type: "reverse-translation", promptEs: "Mucho gusto", correctAnswerSr: "Drago mi je", acceptedVariants: ["drago mi je"] },
+          { id: "e-12-6", type: "reverse-translation", promptEs: "Me llamo Ana", correctAnswerSr: "Ja se zovem Ana", acceptedVariants: ["ja se zovem ana", "se zovem ana", "zovem se ana"] },
+        ],
       },
       {
         id: "lesson-1-3", title: "Gracias y por favor", description: "Hvala, molim y cortesía básica",
-        unitId: "unit-1", order: 3, exercises: [], xpReward: 10,
+        unitId: "unit-1", order: 3, xpReward: 10,
         vocabItems: vocabItems.filter(v => ["v-hvala","v-molim","v-dobro","v-kako-si"].includes(v.id)),
+        exercises: [
+          { id: "e-13-1", type: "recognize", promptSr: "Hvala", correctAnswer: "Gracias", distractors: ["Por favor", "De nada", "Hola"], vocabItemId: "v-hvala" },
+          { id: "e-13-2", type: "recognize", promptSr: "Molim", correctAnswer: "Por favor / De nada", distractors: ["Gracias", "Hola", "Hasta luego"], vocabItemId: "v-molim" },
+          { id: "e-13-3", type: "recognize", promptSr: "Dobro", correctAnswer: "Bien", distractors: ["Mal", "Regular", "Mucho"], vocabItemId: "v-dobro" },
+          { id: "e-13-4", type: "recognize", promptSr: "Kako si?", correctAnswer: "¿Cómo estás? (informal)", distractors: ["¿Cómo te llamas?", "¿Dónde estás?", "¿Cómo se llama?"], vocabItemId: "v-kako-si" },
+          { id: "e-13-5", type: "match", pairs: [{ sr: "Hvala", es: "Gracias" }, { sr: "Molim", es: "Por favor" }, { sr: "Dobro", es: "Bien" }, { sr: "Kako si?", es: "¿Cómo estás?" }] },
+          { id: "e-13-6", type: "reverse-translation", promptEs: "Gracias", correctAnswerSr: "Hvala", acceptedVariants: ["hvala"] },
+          { id: "e-13-7", type: "reverse-translation", promptEs: "¿Cómo estás?", correctAnswerSr: "Kako si?", acceptedVariants: ["kako si?", "kako si"] },
+        ],
       },
     ],
   },
@@ -278,18 +334,47 @@ export const units: Unit[] = [
     lessons: [
       {
         id: "lesson-2-1", title: "Pronombres personales", description: "Ja, ti, on, ona, mi, vi, oni",
-        unitId: "unit-2", order: 1, exercises: [], xpReward: 10,
+        unitId: "unit-2", order: 1, xpReward: 10,
         vocabItems: vocabItems.filter(v => ["v-ja","v-ti","v-on","v-ona","v-mi","v-vi","v-oni"].includes(v.id)),
+        exercises: [
+          { id: "e-21-1", type: "recognize", promptSr: "ja", correctAnswer: "yo", distractors: ["tú", "él", "ella"], vocabItemId: "v-ja" },
+          { id: "e-21-2", type: "recognize", promptSr: "ti", correctAnswer: "tú", distractors: ["yo", "él", "ella"], vocabItemId: "v-ti" },
+          { id: "e-21-3", type: "recognize", promptSr: "on", correctAnswer: "él", distractors: ["yo", "tú", "ella"], vocabItemId: "v-on" },
+          { id: "e-21-4", type: "recognize", promptSr: "ona", correctAnswer: "ella", distractors: ["yo", "tú", "él"], vocabItemId: "v-ona" },
+          { id: "e-21-5", type: "match", pairs: [{ sr: "ja", es: "yo" }, { sr: "ti", es: "tú" }, { sr: "on", es: "él" }, { sr: "ona", es: "ella" }] },
+          { id: "e-21-6", type: "recognize", promptSr: "mi", correctAnswer: "nosotros", distractors: ["vosotros", "ellos", "ustedes"], vocabItemId: "v-mi" },
+          { id: "e-21-7", type: "recognize", promptSr: "oni", correctAnswer: "ellos / ellas", distractors: ["nosotros", "vosotros", "yo"], vocabItemId: "v-oni" },
+          { id: "e-21-8", type: "fill-gap", sentenceWithGap: "___ sam student.", correctAnswer: "Ja", options: ["Ja", "Ti", "On", "Ona"], patternNote: "sam = 1ª persona singular de biti (ser/estar)" },
+          { id: "e-21-9", type: "reverse-translation", promptEs: "yo", correctAnswerSr: "ja", acceptedVariants: ["ja"] },
+        ],
       },
       {
         id: "lesson-2-2", title: "Personas: čovek, žena, dete", description: "Los tres géneros gramaticales",
-        unitId: "unit-2", order: 2, exercises: [], xpReward: 10,
+        unitId: "unit-2", order: 2, xpReward: 10,
         vocabItems: vocabItems.filter(v => ["v-covek","v-zena","v-dete","v-prijatelj"].includes(v.id)),
+        exercises: [
+          { id: "e-22-1", type: "recognize", promptSr: "čovek", correctAnswer: "hombre / persona", distractors: ["mujer", "niño", "amigo"], vocabItemId: "v-covek" },
+          { id: "e-22-2", type: "recognize", promptSr: "žena", correctAnswer: "mujer / esposa", distractors: ["hombre", "niño", "amiga"], vocabItemId: "v-zena" },
+          { id: "e-22-3", type: "recognize", promptSr: "dete", correctAnswer: "niño / niña / hijo", distractors: ["hombre", "mujer", "amigo"], vocabItemId: "v-dete" },
+          { id: "e-22-4", type: "recognize", promptSr: "prijatelj", correctAnswer: "amigo", distractors: ["hombre", "mujer", "niño"], vocabItemId: "v-prijatelj" },
+          { id: "e-22-5", type: "match", pairs: [{ sr: "čovek", es: "hombre" }, { sr: "žena", es: "mujer" }, { sr: "dete", es: "niño" }, { sr: "prijatelj", es: "amigo" }] },
+          { id: "e-22-6", type: "fill-gap", sentenceWithGap: "Ona je lepa ___.", correctAnswer: "žena", options: ["žena", "čovek", "dete", "prijatelj"], patternNote: "lepa = hermosa (adjetivo en forma femenina)" },
+          { id: "e-22-7", type: "reverse-translation", promptEs: "amigo", correctAnswerSr: "prijatelj", acceptedVariants: ["prijatelj"] },
+        ],
       },
       {
         id: "lesson-2-3", title: "El verbo biti (ser/estar)", description: "Ja sam, ti si, on je... El verbo ser+estar",
-        unitId: "unit-2", order: 3, exercises: [], xpReward: 15,
+        unitId: "unit-2", order: 3, xpReward: 15,
         vocabItems: vocabItems.filter(v => ["v-sam"].includes(v.id)),
+        exercises: [
+          { id: "e-23-1", type: "recognize", promptSr: "sam", correctAnswer: "soy / estoy (yo)", distractors: ["eres/estás (tú)", "es/está (él/ella)", "somos/estamos"], vocabItemId: "v-sam" },
+          { id: "e-23-2", type: "fill-gap", sentenceWithGap: "Ja ___ Marko.", correctAnswer: "sam", options: ["sam", "si", "je", "smo"], patternNote: "biti: ja sam = yo soy/estoy" },
+          { id: "e-23-3", type: "fill-gap", sentenceWithGap: "Ti ___ dobar.", correctAnswer: "si", options: ["sam", "si", "je", "smo"], patternNote: "biti: ti si = tú eres/estás" },
+          { id: "e-23-4", type: "fill-gap", sentenceWithGap: "On ___ student.", correctAnswer: "je", options: ["sam", "si", "je", "smo"], patternNote: "biti: on je = él es/está" },
+          { id: "e-23-5", type: "recognize", promptSr: "Ti si", correctAnswer: "Tú eres / Tú estás", distractors: ["Yo soy", "Él es", "Nosotros somos"] },
+          { id: "e-23-6", type: "reverse-translation", promptEs: "Soy Ana", correctAnswerSr: "Ja sam Ana", acceptedVariants: ["ja sam ana", "sam ana"] },
+          { id: "e-23-7", type: "match", pairs: [{ sr: "sam", es: "soy" }, { sr: "si", es: "eres" }, { sr: "je", es: "es" }, { sr: "smo", es: "somos" }] },
+        ],
       },
     ],
   },
