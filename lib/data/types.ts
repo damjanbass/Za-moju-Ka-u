@@ -188,6 +188,32 @@ export interface Story {
   xpReward: number;
 }
 
+// Grammar module
+
+export interface GrammarExample {
+  sr: string;
+  srCyrillic?: string;
+  es: string;
+  highlight?: string; // substring in sr to visually accent
+}
+
+export interface GrammarPattern {
+  name: string;
+  explanation: string;
+  examples: GrammarExample[];
+}
+
+export interface GrammarTopic {
+  id: string; // matches the [topic] URL slug
+  title: string; // Spanish
+  subtitle: string;
+  icon: string;
+  level: "A1" | "A2" | "B1" | "B2";
+  intro: string;
+  patterns: GrammarPattern[];
+  tipForSpanishSpeakers: string;
+}
+
 // Alphabet module
 export interface AlphabetLetter {
   latin: string;

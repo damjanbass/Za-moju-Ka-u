@@ -2,7 +2,9 @@
 // The getTutorReply stub below is the only place to swap in a real AI backend.
 
 export { units, vocabItems, getVocabById, getWordOfTheDay, alphabetLetters, minimalPairs } from "./seed-units";
-export type { VocabItem, Unit, Lesson, Exercise, SrsCard, SrsQuality, DialogueNode, ConversationScene, Story, AlphabetLetter, MinimalPair } from "./types";
+export { stories } from "./seed-stories";
+export { grammarTopics } from "./seed-grammar";
+export type { VocabItem, Unit, Lesson, Exercise, SrsCard, SrsQuality, DialogueNode, ConversationScene, Story, AlphabetLetter, MinimalPair, GrammarTopic, GrammarPattern, GrammarExample } from "./types";
 
 // ─── Conversation dialogue data ───────────────────────────────────────────────
 // Scripted scenes only. No network requests, no API calls.

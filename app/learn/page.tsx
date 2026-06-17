@@ -6,8 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAppStore } from "@/lib/store/use-app-store";
-import { units } from "@/lib/data";
-import { Lock, CheckCircle2, ChevronRight, PlayCircle } from "lucide-react";
+import { units, grammarTopics } from "@/lib/data";
+import { Lock, CheckCircle2, ChevronRight, PlayCircle, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function LearnPage() {
@@ -113,6 +113,36 @@ export default function LearnPage() {
             <p className="text-xs">Verbos, números, gramática de casos y mucho más.</p>
           </CardContent>
         </Card>
+
+        {/* Grammar supplements */}
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            <GraduationCap className="h-5 w-5 text-primary" />
+            <h2 className="font-semibold text-lg">Tarjetas de gramática</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-4">
+            Consultas de referencia sobre el sistema gramatical serbio. Úsalas como apoyo a las lecciones.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {grammarTopics.map((t) => (
+              <Link
+                key={t.id}
+                href={`/grammar/${t.id}`}
+                className="flex items-start gap-3 rounded-xl border bg-card p-4 text-sm hover:bg-muted transition-colors"
+              >
+                <span className="text-2xl shrink-0">{t.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                    <span className="font-semibold text-sm truncate">{t.title}</span>
+                    <Badge variant="outline" className="text-[10px] shrink-0">{t.level}</Badge>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-snug line-clamp-2">{t.subtitle}</p>
+                </div>
+                <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </AppShell>
   );
